@@ -2,6 +2,7 @@ package com.github.kazuhito_m.systemtest.test
 
 import com.github.kazuhito_m.systemtest.page.DashboadPage
 import com.github.kazuhito_m.systemtest.page.HeroPage
+import com.github.kazuhito_m.systemtest.page.UsersPage
 import geb.spock.GebReportingSpec
 
 /**
@@ -28,11 +29,13 @@ class WhenAdminMissOperation extends GebReportingSpec {
         when: "Adminページに移動する"
         toUsersPage()
 
-        expect: "ユーザー一覧ページに移動する"
+        then: "ユーザー一覧ページに移動する"
         at UsersPage
-//
+
 //        and: "Adminユーザを削除しようとする"
 //        users[0].delete()
+        // TODO 上記は努力目標
+//        deleteUser("admin")
 //
 //        then: "Adminユーザが削除できない"
 //        users[0].name = "admin"
