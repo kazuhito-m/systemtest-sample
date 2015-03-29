@@ -8,11 +8,12 @@ import geb.spock.GebReportingSpec
  */
 class WhenAdminMissOperation extends GebReportingSpec {
 
-    def "Adminユーザが一人の場合に削除しようとしても削除できない"() {
+    def "Adminユーザを削除しようとしても削除できない"() {
 
-        given: "Adiminユーザが一人の場合"
-        when: "Adminユーザを削除しようとする"
-        then: "削除しようとしたユーザが削除できない"
+        when: "システムにログインする"
+        and: "Adminページに移動する"
+        and: "Adminユーザを削除しようとする"
+        then: "Adminユーザが削除できない"
 
     }
 }
