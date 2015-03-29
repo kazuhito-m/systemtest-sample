@@ -6,7 +6,7 @@ import geb.spock.GebReportingSpec
 /**
  * Created by kazuhito_m on 15/03/29.
  */
-class SystemInvaliStatus extends GebReportingSpec {
+class WhenAdminMissOperation extends GebReportingSpec {
 
     def "Adminユーザが一人の場合に削除しようとしても削除できない"() {
 
