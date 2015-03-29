@@ -1,5 +1,6 @@
 package com.github.kazuhito_m.systemtest.test
 
+import com.github.kazuhito_m.systemtest.page.DashboadPage
 import com.github.kazuhito_m.systemtest.page.HeroPage
 import geb.spock.GebReportingSpec
 
@@ -9,11 +10,31 @@ import geb.spock.GebReportingSpec
 class WhenAdminMissOperation extends GebReportingSpec {
 
     def "Adminユーザを削除しようとしても削除できない"() {
+        given: "トップページにアクセスする"
+        to HeroPage
+
+        expect: "未ログインページが表示される"
+        at HeroPage
 
         when: "システムにログインする"
-        and: "Adminページに移動する"
-        and: "Adminユーザを削除しようとする"
-        then: "Adminユーザが削除できない"
+        username = "admin"
+        password = "admin"
+        login()
 
+
+        then: "ダッシュボードが表示される"
+        at DashboadPage
+
+        when: "Adminページに移動する"
+        toUsersPage()
+
+        expect: "ユーザー一覧ページに移動する"
+        at UsersPage
+//
+//        and: "Adminユーザを削除しようとする"
+//        users[0].delete()
+//
+//        then: "Adminユーザが削除できない"
+//        users[0].name = "admin"
     }
 }

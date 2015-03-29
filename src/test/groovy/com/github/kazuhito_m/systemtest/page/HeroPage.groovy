@@ -8,4 +8,13 @@ import geb.Page
 class HeroPage extends Page  {
     static url = ""
     static at = { title == "Grabbit" }
+
+    static content = {
+        username {$("input#username")}
+        password {$("input#password")}
+    }
+
+    void login(){
+        $("#submit").click()
+    }
 }
