@@ -13,6 +13,7 @@ class UsersPage extends Page {
     }
 
     void deleteUser(String username) {
+        WebElement e = $("table#table-striped tbody tr")
     }
 
 }
