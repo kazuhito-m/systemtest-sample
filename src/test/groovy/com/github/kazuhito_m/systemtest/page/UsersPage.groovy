@@ -1,5 +1,6 @@
 package com.github.kazuhito_m.systemtest.page
 
+import com.github.kazuhito_m.systemtest.module.UserListTableRow
 import geb.Page
 import org.openqa.selenium.WebElement
 
@@ -12,8 +13,12 @@ class UsersPage extends Page {
         title == "Grabbit SecureUser"
     }
 
+    static context = {
+        users {moduleList UserListTableRow, $("table tr").tail()} // tail()しているのは
+    }
+
     void deleteUser(String username) {
-        WebElement e = $("table#table-striped tbody tr")
+//        WebElement e = $("table#table-striped tbody tr")
     }
 
 }

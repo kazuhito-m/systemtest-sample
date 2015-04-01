@@ -32,7 +32,8 @@ class WhenAdminMissOperation extends GebReportingSpec {
         then: "ユーザー一覧ページに移動する"
         at UsersPage
 
-//        and: "Adminユーザを削除しようとする"
+        and: "Adminユーザを削除しようとする"
+        users[0].username == "admin"
 //        users[0].delete()
         // TODO 上記は努力目標
 //        deleteUser("admin")
