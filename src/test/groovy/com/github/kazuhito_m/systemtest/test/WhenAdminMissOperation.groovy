@@ -10,7 +10,7 @@ import geb.spock.GebReportingSpec
  */
 class WhenAdminMissOperation extends GebReportingSpec {
 
-    def "Adminユーザを削除しようとしても削除できない"() {
+    def "管理者ユーザを削除しようとしても削除できない"() {
 
         given: "トップページにアクセスする"
         to HeroPage

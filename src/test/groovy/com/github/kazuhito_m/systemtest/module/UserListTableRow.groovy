@@ -19,7 +19,7 @@ class UserListTableRow extends Module {
      * 具体的にはバツボタンをクリックする。
      * @return
      */
-    def delete() {
+    void delete() {
         this.deleteButton.click()
     }
 
@@ -28,7 +28,7 @@ class UserListTableRow extends Module {
      * 具体的には目ボタンをクリックする。
      * @return
      */
-    def edit() {
+    void edit() {
         this.editButton.click()
     }
 }
