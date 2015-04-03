@@ -13,4 +13,22 @@ class UserListTableRow extends Module {
         editButton { cell(2).$("a",0)}
         deleteButton { cell(2).$("a",1)}
     }
+
+    /**
+     * 削除という行為。
+     * 具体的にはバツボタンをクリックする。
+     * @return
+     */
+    def delete() {
+        this.deleteButton.click()
+    }
+
+    /**
+     * 変更を開始する。
+     * 具体的には目ボタンをクリックする。
+     * @return
+     */
+    def edit() {
+        this.editButton.click()
+    }
 }

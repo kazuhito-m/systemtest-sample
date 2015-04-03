@@ -41,7 +41,7 @@ class WhenAdminMissOperation extends GebReportingSpec {
         adminUserInfo != null
 
         and: "削除したとしても"
-        withConfirm(true) { adminUserInfo.deleteButton.click() } == "本当に削除してよろしいですか?"
+        withConfirm(true) { adminUserInfo.delete() } == "本当に削除してよろしいですか?"
 
         then: "一覧にステイしたままで"
         at UsersPage
