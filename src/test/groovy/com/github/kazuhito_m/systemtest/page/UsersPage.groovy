@@ -16,7 +16,6 @@ class UsersPage extends Page {
     }
 
     static content = {
-        println("ここは通ってますよ")
         users { moduleList UserListTableRow, $(".table tbody tr") } // tail()しているのは
     }
 
