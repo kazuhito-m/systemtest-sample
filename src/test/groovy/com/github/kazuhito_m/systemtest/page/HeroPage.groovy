@@ -14,7 +14,22 @@ class HeroPage extends Page  {
         password {$("input#password")}
     }
 
+    /**
+     * ログインする。
+     */
     void login(){
         $("#submit").click()
+    }
+
+    /**
+     * ログインする。
+     * より操作しやす形のリファクタリング版オーバライド。
+     * @param user
+     * @param pass
+     */
+    void login(user,pass) {
+        this.username = user
+        this.password = pass
+        login()
     }
 }

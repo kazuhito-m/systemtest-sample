@@ -19,10 +19,7 @@ class WhenAdminMissOperation extends GebReportingSpec {
         at HeroPage
 
         when: "システムにログインする"
-        username = "admin"
-        password = "admin"
-        login()
-
+        login("admin", "admin")
 
         then: "ダッシュボードが表示される"
         at DashboadPage
@@ -37,7 +34,7 @@ class WhenAdminMissOperation extends GebReportingSpec {
         users.size > 0
 
         when: "管理者アカウントがあり"
-        def adminUserInfo = users.find{ it.username == "admin" }
+        def adminUserInfo = users.find { it.username == "admin" }
         adminUserInfo != null
 
         and: "削除したとしても"
@@ -47,7 +44,7 @@ class WhenAdminMissOperation extends GebReportingSpec {
         at UsersPage
 
         and: "かつ削除されない"
-        users.any { it.username == "admin"  }
+        users.any { it.username == "admin" }
 
     }
 }
