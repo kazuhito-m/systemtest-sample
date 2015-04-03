@@ -11,6 +11,7 @@ import geb.spock.GebReportingSpec
 class WhenAdminMissOperation extends GebReportingSpec {
 
     def "Adminユーザを削除しようとしても削除できない"() {
+
         given: "トップページにアクセスする"
         to HeroPage
 
@@ -32,13 +33,21 @@ class WhenAdminMissOperation extends GebReportingSpec {
         then: "ユーザー一覧ページに移動する"
         at UsersPage
 
-        and: "Adminユーザを削除しようとする"
-        users[0].username == "admin"
-//        users[0].delete()
-        // TODO 上記は努力目標
-//        deleteUser("admin")
-//
-//        then: "Adminユーザが削除できない"
-//        users[0].name = "admin"
+        and: "ユーザは一軒以上ある"
+        users.size > 0
+
+        when: "管理者アカウントがあり"
+        def adminUserInfo = users.find{ it.username == "admin" }
+        adminUserInfo != null
+
+        and: "削除したとしても"
+        withConfirm(true) { adminUserInfo.deleteButton.click() } == "本当に削除してよろしいですか?"
+
+        then: "一覧にステイしたままで"
+        at UsersPage
+
+        and: "かつ削除されない"
+        users.any { it.username == "admin"  }
+
     }
 }
