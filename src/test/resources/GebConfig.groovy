@@ -10,4 +10,4 @@ reportsDir = "build/reports/geb"
 //    }
 //}
 
-baseUrl = "http://my-grabbit2.herokuapp.com/"
+baseUrl = "http://my-grabbit3.herokuapp.com/"

@@ -2,9 +2,6 @@ package com.github.kazuhito_m.systemtest.page
 
 import com.github.kazuhito_m.systemtest.module.UserListTableRow
 import geb.Page
-import geb.*
-import org.openqa.selenium.WebElement
-
 
 /**
  * Created by kazuhito_m on 15/03/29.
